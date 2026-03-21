@@ -3,6 +3,26 @@ import './App.css';
 import profilePhoto from './assets/profile.jpg.jpeg';
 import { projectsData } from './assets/projects.js';
 
+const getPlatformData = (issuer) => {
+  const i = issuer ? String(issuer).toLowerCase() : '';
+  if (i.includes('nptel')) return { class: 'p-nptel', text: 'NPTEL' };
+  if (i.includes('coursera') || i.includes('meta')) return { class: 'p-coursera', text: 'CRS' };
+  if (i.includes('udemy')) return { class: 'p-udemy', text: 'UDM' };
+  if (i.includes('hackerrank')) return { class: 'p-hrank', text: 'HR' };
+  return { class: 'p-online', text: 'AI' };
+};
+
+const getCategoryTheme = (category) => {
+  const c = category ? String(category).toLowerCase() : '';
+  if (c.includes('web')) return 'tag-web';
+  if (c.includes('artificial') || c.includes('ai')) return 'tag-ai';
+  if (c.includes('network')) return 'tag-net';
+  if (c.includes('program')) return 'tag-prog';
+  if (c.includes('mobile')) return 'tag-mob';
+  if (c.includes('telecom') || c.includes('communication')) return 'tag-tel';
+  return 'tag-web';
+};
+
 function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -138,45 +158,114 @@ function App() {
     }
   };
 
-  const skGroups = {
-    'Frontend': [
-      { n: 'ReactJS', v: 85, col: 'var(--cyan)' },
-      { n: 'HTML5 & CSS3', v: 92, col: 'var(--cyan)' },
-      { n: 'Tailwind CSS', v: 90, col: 'var(--cyan)' },
-      { n: 'JavaScript', v: 88, col: 'var(--cyan)' },
-    ],
-    'Backend': [
-      { n: 'NodeJS', v: 82, col: 'var(--purple)' },
-      { n: 'Express.js', v: 80, col: 'var(--purple)' },
-      { n: 'Flask / Django', v: 68, col: 'var(--purple)' },
-      { n: 'Java Spring', v: 60, col: 'var(--purple)' },
-    ],
-    'Databases': [
-      { n: 'MySQL', v: 85, col: 'var(--green)' },
-      { n: 'MongoDB', v: 80, col: 'var(--green)' },
-      { n: 'PostgreSQL', v: 70, col: 'var(--green)' },
-      { n: 'Firebase', v: 75, col: 'var(--green)' },
-    ],
-    'Tools & DevOps': [
-      { n: 'Git & GitHub', v: 90, col: 'var(--orange)' },
-      { n: 'Vercel / Netlify', v: 85, col: 'var(--orange)' },
-      { n: 'Docker', v: 65, col: 'var(--orange)' },
-      { n: 'Postman', v: 88, col: 'var(--orange)' },
-    ]
-  };
-  const csSkills = ['DBMS', 'Operating Systems', 'Computer Networks', 'DSA', 'OOPs', 'REST APIs', 'System Design', 'Agile'];
 
-  const certs = [
-    { name: 'Cloud Computing', org: 'NPTEL · IIT Kharagpur', date: 'Nov 2025', emoji: '☁️', color: 'var(--cyan)', link: 'https://github.com/Umashankar12345/Certificate/blob/main/Cloud%20Computing%20(2)%20(1).pdf' },
-    { name: 'ChatGPT-4 Prompt Engineering: GenAI & LLM', org: 'Infosys', date: 'Aug 2025', emoji: '🤖', color: 'var(--purple)' },
-    { name: 'TCP/IP Advanced Topics', org: 'Coursera', date: 'Nov 2024', emoji: '🌐', color: 'var(--green)' },
-    { name: 'Build Generative AI Apps with No-Code', org: 'IBM', date: '2026', emoji: '🛠️', color: 'var(--orange)' },
-    { name: 'Android Mobile App Development', org: 'Meta', date: '2026', emoji: '📱', color: 'var(--cyan)' },
-    { name: 'PHP with Laravel Masterclass', org: 'Udemy', date: '2025', emoji: '🐘', color: 'var(--purple)' },
-    { name: 'Networking for Career Growth', org: 'LinkedIn Learning', date: '2025', emoji: '🤝', color: 'var(--green)' },
-    { name: 'Three Pillars of Communication', org: 'LinkedIn Learning', date: '2025', emoji: '🗣️', color: 'var(--orange)' },
-    { name: 'Bits & Bytes of Computer Networking', org: 'Google', date: 'Nov 2024', emoji: '🔗', color: 'var(--cyan)' },
-    { name: 'Introduction to Hardware and OS', org: 'Google', date: 'Aug 2024', emoji: '💻', color: 'var(--purple)' },
+  const certificates = [
+
+    {
+      title: "Cloud Computing",
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Nov 2025",
+      link: "https://drive.google.com/file/d/12rlU8P7x0jC6fHtv8CJ31-VxNBa90Bnr/view?usp=sharing"
+    },
+    {
+
+      title: "ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM",
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Nov 2025",
+      link: "https://drive.google.com/file/d/1dUEdWBdYyvkuofDo78IyIVYM-kDneRyE/view?usp=sharing"
+    },
+    {
+      title: "Computational Theory: Language Principle & Finite Automata Theory",
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Aug 2025",
+      link: "https://drive.google.com/file/d/1ruI2dLV77DM_tgj6knG3qAvEqyRRFgh4/view?usp=sharing"
+    },
+    {
+      title: "Build Generative AI Apps and Solutions with No-Code Tools",
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Aug 2025",
+      link: "https://drive.google.com/file/d/1kG0Uo7XbgIGonwN-_ONiaMWaceK2FjQs/view?usp=sharing"
+    },
+    {
+      title: "Laravel Master Certificate",
+      issuer: "Udemy",
+      category: "Web Development",
+      link: "https://drive.google.com/file/d/149GMjvioDLoZ9XAusCG_HLmtrVz-0DCA/view?usp=sharing"
+    },
+    {
+      title: "Generative AI: Introduction to Large Language Models",
+      issuer: "Online Course",
+      category: "Artificial Intelligence",
+      link: "https://drive.google.com/file/d/1BK1g6XfGq9jS1fjZWh6BZ7yVz9gK48LT/preview"
+    },
+    {
+      title: "Introduction to Generative AI with GPT",
+      issuer: "Online Course",
+      category: "Artificial Intelligence",
+      link: "https://drive.google.com/file/d/1pXmQbIRbQoe8I1S8WtSlIiZ4CCzUYySz/preview"
+    },
+    {
+      title: "The Bits and Bytes of Computer Networking",
+      issuer: "Coursera",
+      category: "Networking",
+      link: "https://drive.google.com/file/d/13-_RIAlHh6Lb9YkTGAd6sbQXOL5odrH-/view?usp=sharing"
+    },
+    {
+      title: "Packet switching Networks and Algorithm",
+      issuer: "Online Course",
+      category: "Networking",
+      link: "https://drive.google.com/file/d/1Qh2px2jwEC6TPvrdzluSoxPpRYqkSCYQ/view?usp=sharing"
+    },
+
+    {
+      title: "Use Cases , the Future of 5G Course , Beyond",
+      issuer: "Online Course",
+      category: "Telecommunications",
+      link: "https://drive.google.com/file/d/1peKbdjusxKPZlndFlEHn3WGWuaAca10_/view?usp=sharing"
+    },
+    {
+      title: "Introduction to Android Mobile Application Development",
+      issuer: "Meta / Coursera",
+      category: "Mobile Development",
+      link: "https://drive.google.com/file/d/1D6oS0x4b8cWTHS6_nm-20d9Rw0UoOFBd/view?usp=sharing"
+    },
+    {
+      title: "Problem Solving (Basic)",
+      issuer: "HackerRank",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/15GvEuoLMCSIthyW6meNwlRaCqSokLJKu/view?usp=sharing"
+    },
+    {
+      title: "Data Structures and Alogorithm",
+      issuer: "Online Course",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/1h6OsVuZ3V8BIvSBDtNe9syV-uh3pt8f_/view?usp=sharing"
+    },
+    {
+      title: "Object Oriented Programming",
+      issuer: "Online Course",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/1dSkNc0UiRcuUF7Wx-n80XNxrg4CwaaYV/view?usp=sharing"
+    },
+    {
+      title: "Professional Networking for Career Growth",
+      issuer: "LinkedIn Learning",
+      category: "Career Development",
+      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
+    },
+    {
+      title: "The Three Pillars of Effective Communication",
+      issuer: "Online Course",
+      category: "Soft Skills",
+      link: "https://drive.google.com/file/d/1Nn1oiklk9UO4N9DeWP0s0bGoEtdyzEMa/view?usp=sharing"
+    },
+    {
+      title: "Success Mindset",
+      issuer: "Online Course",
+      category: "Personal Development",
+      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
+    }
+
   ];
 
   const achievements = [
@@ -363,33 +452,164 @@ function App() {
       </section>
 
       {/* ══ SKILLS ══ */}
-      <section id="skills" style={{ padding: '6rem 1.5rem' }}>
+      <section id="skills" style={{ padding: '6rem 1.5rem', marginBottom: '100px' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="reveal"><p className="slabel mb-2">SKILL.MATRIX</p><h2 className="stitle text-4xl mb-10">SKILLS</h2></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="reveal" id="skills-root">
-            {Object.keys(skGroups).map((group, gi) => (
-              <div key={group}>
-                <h3 style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '.75rem', letterSpacing: '.2em', color: gi % 2 === 0 ? 'var(--cyan)' : 'var(--purple)', marginBottom: '1.5rem' }}>▸ {group.toUpperCase()}</h3>
-                <div className="space-y-4">
-                  {skGroups[group].map(s => (
-                    <div key={s.n}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'Space Mono, monospace', fontSize: '.7rem', color: '#4a6a8a' }}>
-                        <span>{s.n}</span><span style={{ color: s.col }}>{s.v}%</span>
-                      </div>
-                      <div className="sbar">
-                        <div className="sbar-fill" data-w={s.v} style={{ background: `linear-gradient(90deg, ${s.col}, rgba(191,0,255,.5))`, boxShadow: `0 0 7px ${s.col}` }}></div>
-                      </div>
-                    </div>
-                  ))}
+          <div className="reveal">
+            <div className="section-tag">SYSTEM.CAPABILITIES</div>
+            <h2 className="section-title" style={{ marginBottom: '48px' }}>SKILLS</h2>
+          </div>
+          <div className="skills-grid reveal">
+
+            {/* FRONTEND */}
+            <div className="skill-category">
+              <div className="category-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Frontend
+              </div>
+              <div className="tech-grid">
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#61DAFB"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.5"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.5" transform="rotate(120 12 12)"/></svg></span>
+                  <span className="chip-label">ReactJS</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="#E34F26" strokeWidth="2"/></svg></span>
+                  <span className="chip-label">HTML5</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2" fill="#264DE4"/><path d="M7 7h10M7 12h8M7 17h6" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg></span>
+                  <span className="chip-label">CSS3</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#06B6D4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></span>
+                  <span className="chip-label">Tailwind CSS</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2" fill="#F7DF1E"/><path d="M7 17.5l1.6-1c.3.55.58.97 1.24.97.63 0 1.03-.25 1.03-1.22V10h1.97v6.3c0 2-1.17 2.9-2.88 2.9-1.54 0-2.44-.8-2.96-1.7zm6.5-.2l1.6-.98c.4.66.93 1.14 1.85 1.14.78 0 1.28-.39 1.28-.93 0-.64-.51-.87-1.37-1.24l-.47-.2c-1.36-.58-2.26-1.3-2.26-2.83 0-1.41 1.07-2.48 2.75-2.48 1.2 0 2.06.41 2.67 1.5l-1.46.94c-.32-.58-.67-.8-1.2-.8-.55 0-.9.35-.9.8 0 .56.35.79 1.16 1.13l.47.2c1.6.69 2.5 1.39 2.5 2.96 0 1.7-1.33 2.61-3.12 2.61-1.75 0-2.88-.83-3.43-1.92z" fill="#000"/></svg></span>
+                  <span className="chip-label">JavaScript</span>
                 </div>
               </div>
-            ))}
-            <div>
-              <h3 style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '.75rem', letterSpacing: '.2em', color: 'var(--orange)', marginBottom: '1.5rem' }}>▸ CS FUNDAMENTALS</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem' }}>
-                {csSkills.map(s => <span key={s} className="tag tagp">{s}</span>)}
+            </div>
+
+            {/* BACKEND */}
+            <div className="skill-category">
+              <div className="category-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Backend
+              </div>
+              <div className="tech-grid">
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#339933"><path d="M12 1.85c-.27 0-.55.07-.78.2L3.78 6.35c-.48.28-.78.79-.78 1.33v8.64c0 .55.3 1.06.78 1.33l7.44 4.3c.23.13.5.2.78.2s.55-.07.78-.2l7.44-4.3c.48-.28.78-.79.78-1.33V7.68c0-.55-.3-1.06-.78-1.33L12.78 2.05c-.23-.13-.5-.2-.78-.2zm0 2.03l6.66 3.85v7.66L12 19.24l-6.66-3.85V7.73L12 3.88z"/></svg></span>
+                  <span className="chip-label">NodeJS</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#000000"><rect width="24" height="24" rx="4" fill="#404040"/><path d="M6 8h2v8H6zm4 0h2l2 4 2-4h2v8h-2v-5l-2 4-2-4v5h-2z" fill="white"/></svg></span>
+                  <span className="chip-label">Express.js</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#3776AB"/><path d="M7 7h5a3 3 0 010 6H9v4H7V7zm2 2v2h3a1 1 0 000-2H9z" fill="white"/></svg></span>
+                  <span className="chip-label">Flask / Django</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#6DB33F"/><path d="M12 4C8 4 6 6.5 6 9c0 1.5.7 2.8 1.8 3.6C6.7 13.4 6 14.6 6 16c0 2.2 2.4 4 6 4s6-1.8 6-4c0-1.4-.7-2.6-1.8-3.4C17.3 11.8 18 10.5 18 9c0-2.5-2-5-6-5z" fill="white"/></svg></span>
+                  <span className="chip-label">Java Spring</span>
+                </div>
               </div>
             </div>
+
+            {/* DATABASES */}
+            <div className="skill-category">
+              <div className="category-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                Databases
+              </div>
+              <div className="tech-grid">
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#4479A1"/><path d="M12 4C8.5 4 6 5 6 6.5v11C6 19 8.5 20 12 20s6-1 6-2.5v-11C18 5 15.5 4 12 4z" fill="none" stroke="white" strokeWidth="1.5"/><ellipse cx="12" cy="6.5" rx="6" ry="2.5" fill="white" opacity=".8"/></svg></span>
+                  <span className="chip-label">MySQL</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#47A248"/><path d="M12 4c-4 0-6 2-6 4 0 1.5 1.5 2.5 3 3-1.8.8-3 2-3 3.5C6 17 8.7 20 12 20s6-3 6-5.5c0-1.5-1.2-2.7-3-3.5 1.5-.5 3-1.5 3-3 0-2-2-4-6-4z" fill="none" stroke="white" strokeWidth="1.5"/></svg></span>
+                  <span className="chip-label">MongoDB</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#336791"/><path d="M12 5l6 3.5v7L12 19l-6-3.5v-7L12 5z" fill="none" stroke="white" strokeWidth="1.5"/><circle cx="12" cy="12" r="2" fill="white" opacity=".7"/></svg></span>
+                  <span className="chip-label">PostgreSQL</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FFCA28"/><path d="M12 4L6 20h12L12 4z" fill="#FF9800"/></svg></span>
+                  <span className="chip-label">Firebase</span>
+                </div>
+              </div>
+            </div>
+
+            {/* TOOLS & DEVOPS */}
+            <div className="skill-category">
+              <div className="category-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Tools & DevOps
+              </div>
+              <div className="tech-grid">
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#F05032"><path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.15 1.78.93 2.23v5.54c-.6.34-1 .99-1 1.73 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5 0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2c-.2 0-.37.03-.53.09L15.1 7.97A2 2 0 0013 5.98c-.7 0-1.32.37-1.68.92L9.63 5.2 10.59 4.2 12 2.79 21.21 12 12 21.21 2.79 12l-.19-.41z"/></svg></span>
+                  <span className="chip-label">Git & GitHub</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path d="M4 12l4-8 4 8-4 2-4-2zm8 0l4-8 4 8-4 2-4-2z" fill="white" opacity=".8"/></svg></span>
+                  <span className="chip-label">Vercel / Netlify</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="#2496ED"><path d="M13.98 11.08l-2.11-2.1-4.68 4.68 4.68 4.69 2.1-2.1-2.57-2.59 2.58-2.58zM10.02 12.92l2.11 2.1 4.68-4.68-4.68-4.69-2.1 2.1 2.57 2.59-2.58 2.58z"/></svg></span>
+                  <span className="chip-label">Docker</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6C37"/><path d="M7 8h10M7 12h10M7 16h6" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg></span>
+                  <span className="chip-label">Postman</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CS FUNDAMENTALS */}
+            <div className="skill-category" style={{ gridColumn: '1/-1' }}>
+              <div className="category-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                CS Fundamentals
+              </div>
+              <div className="tech-grid">
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+                  <span className="chip-label">DBMS</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></span>
+                  <span className="chip-label">Operating Systems</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><rect x="2" y="7" width="5" height="4" rx="1"/><rect x="9" y="3" width="5" height="4" rx="1"/><rect x="9" y="14" width="5" height="4" rx="1"/><rect x="16" y="7" width="5" height="4" rx="1"/><line x1="7" y1="9" x2="9" y2="5"/><line x1="7" y1="9" x2="9" y2="16"/><line x1="14" y1="5" x2="16" y2="9"/><line x1="14" y1="16" x2="16" y2="9"/></svg></span>
+                  <span className="chip-label">Computer Networks</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><path d="M9 3H3v6l6 3V3zM21 3h-6v6l6 3V3zM9 15H3v6h6v-6zM21 15h-6v6h6v-6z"/></svg></span>
+                  <span className="chip-label">DSA</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6M6 9v6M18 9v6M9 18h6"/></svg></span>
+                  <span className="chip-label">OOPs</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg></span>
+                  <span className="chip-label">REST APIs</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M3 3l6 6M15 15l6 6M21 3l-6 6M9 15l-6 6"/></svg></span>
+                  <span className="chip-label">System Design</span>
+                </div>
+                <div className="tech-chip">
+                  <span className="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00f5ff" strokeWidth="1.5"><rect x="3" y="3" width="8" height="5" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="3" y="12" width="8" height="5" rx="1"/><rect x="13" y="12" width="8" height="5" rx="1"/><path d="M7 8v4M17 8v4M7 17v4M17 17v4"/></svg></span>
+                  <span className="chip-label">Agile</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -488,23 +708,30 @@ function App() {
       {/* ══ CERTIFICATES ══ */}
       <section id="certificates" style={{ padding: '6rem 1.5rem' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="reveal"><p className="slabel mb-2">{"ACHIEVEMENT.LOG"}</p><h2 className="stitle text-4xl mb-10">CERTIFICATES</h2></div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))', gap: '1.25rem' }}>
-            {certs.map((c, i) => (
-              <div key={i} className="card cb reveal" style={{ padding: '1.4rem', transitionDelay: (i % 3 * .1) + 's' }}>
-                <div style={{ display: 'flex', gap: '.9rem', alignItems: 'center' }}>
-                  <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', background: `${c.color}12`, border: `1px solid ${c.color}30`, borderRadius: '3px', flexShrink: 0 }}>{c.emoji}</div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <h3 style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '.72rem', color: '#e0f0ff', marginBottom: '.25rem', lineHeight: 1.4 }}>{c.name}</h3>
-                    <p style={{ fontSize: '.82rem', color: '#4a6a8a', marginBottom: '.4rem' }}>{c.org}</p>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span className="slabel" style={{ fontSize: '.56rem' }}>{c.date}</span>
-                      <button onClick={() => window.open(c.link || 'https://github.com/Umashankar12345/Certificate', '_blank')} style={{ fontFamily: 'Space Mono, monospace', fontSize: '.58rem', color: c.color, textDecoration: 'none', border: `1px solid ${c.color}30`, padding: '2px 6px', transition: 'all .3s', background: 'none', cursor: 'pointer' }}>VERIFY →</button>
+          <div className="reveal">
+            <div className="section-tag">VERIFIED.CREDENTIALS</div>
+            <h2 className="section-title">CERTIFICATIONS</h2>
+          </div>
+          <div className="certs-grid reveal">
+            {certificates.map((c, i) => {
+              const platform = getPlatformData(c.issuer);
+              const tagClass = getCategoryTheme(c.category || c.title);
+              return (
+                <div key={i} className="cert-card" style={{ transitionDelay: (i % 3 * .1) + 's' }} onClick={() => window.open(c.link || 'https://github.com/Umashankar12345/Certificate', '_blank')}>
+                  <div className="cert-card-top">
+                    <div className={`cert-platform-icon ${platform.class}`}>{platform.text}</div>
+                    <div className="cert-meta">
+                      <div className="cert-title" title={c.title}>{c.title}</div>
+                      <div className="cert-platform-name">{c.issuer}</div>
                     </div>
                   </div>
+                  <span className={`cert-tag ${tagClass}`}>{c.category || 'Certification'}</span>
+                  <div className="verify-link">
+                    VERIFY <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

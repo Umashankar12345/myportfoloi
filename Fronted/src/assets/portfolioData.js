@@ -188,48 +188,113 @@ My approach combines strong technical skills with creative problem-solving, alwa
   ],
 
   certificates: [
+
     {
       title: "Cloud Computing",
       issuer: "NPTEL, IIT Kharagpur",
       date: "Nov 2025",
-      link: "https://github.com/Umashankar12345/Certificate/blob/main/Cloud%20Computing%20(2)%20(1).pdf"
+      link: "https://drive.google.com/file/d/12rlU8P7x0jC6fHtv8CJ31-VxNBa90Bnr/view?usp=sharing"
     },
     {
-      title: "ChatGPT-4 Prompt Engineering",
-      issuer: "INFOSYS",
+
+      title: "ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM",
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Nov 2025",
+      link: "https://drive.google.com/file/d/1dUEdWBdYyvkuofDo78IyIVYM-kDneRyE/view?usp=sharing"
+    },
+    {
+      title: "Computational Theory: Language Principle & Finite Automata Theory",
+      issuer: "NPTEL, IIT Kharagpur",
       date: "Aug 2025",
-      link: "#"
-    },
-    {
-      title: "TCP/IP Advanced Topics",
-      issuer: "COURSERA",
-      date: "Nov 2024",
-      link: "#"
+      link: "https://drive.google.com/file/d/1ruI2dLV77DM_tgj6knG3qAvEqyRRFgh4/view?usp=sharing"
     },
     {
       title: "Build Generative AI Apps and Solutions with No-Code Tools",
-      issuer: "Meta (via SkillsBuild/Coursera)",
-      date: "Recent",
-      link: "https://github.com/Umashankar12345/Certificate"
+      issuer: "NPTEL, IIT Kharagpur",
+      date: "Aug 2025",
+      link: "https://drive.google.com/file/d/1kG0Uo7XbgIGonwN-_ONiaMWaceK2FjQs/view?usp=sharing"
+    },
+    {
+      title: "Laravel Master Certificate",
+      issuer: "Udemy",
+      category: "Web Development",
+      link: "https://drive.google.com/file/d/149GMjvioDLoZ9XAusCG_HLmtrVz-0DCA/view?usp=sharing"
+    },
+    {
+      title: "Generative AI: Introduction to Large Language Models",
+      issuer: "Online Course",
+      category: "Artificial Intelligence",
+      link: "https://drive.google.com/file/d/1BK1g6XfGq9jS1fjZWh6BZ7yVz9gK48LT/preview"
+    },
+    {
+      title: "Introduction to Generative AI with GPT",
+      issuer: "Online Course",
+      category: "Artificial Intelligence",
+      link: "https://drive.google.com/file/d/1pXmQbIRbQoe8I1S8WtSlIiZ4CCzUYySz/preview"
+    },
+    {
+      title: "The Bits and Bytes of Computer Networking",
+      issuer: "Coursera",
+      category: "Networking",
+      link: "https://drive.google.com/file/d/13-_RIAlHh6Lb9YkTGAd6sbQXOL5odrH-/view?usp=sharing"
+    },
+    {
+      title: "Packet switching Networks and Algorithm",
+      issuer: "Online Course",
+      category: "Networking",
+      link: "https://drive.google.com/file/d/1Qh2px2jwEC6TPvrdzluSoxPpRYqkSCYQ/view?usp=sharing"
+    },
+
+    {
+      title: "Use Cases , the Future of 5G Course , Beyond",
+      issuer: "Online Course",
+      category: "Telecommunications",
+      link: "https://drive.google.com/file/d/1peKbdjusxKPZlndFlEHn3WGWuaAca10_/view?usp=sharing"
     },
     {
       title: "Introduction to Android Mobile Application Development",
-      issuer: "Meta (via Coursera)",
-      date: "Recent",
-      link: "https://github.com/Umashankar12345/Certificate"
+      issuer: "Meta / Coursera",
+      category: "Mobile Development",
+      link: "https://drive.google.com/file/d/1D6oS0x4b8cWTHS6_nm-20d9Rw0UoOFBd/view?usp=sharing"
     },
     {
-      title: "PHP with Laravel for beginners - Become a Master in Laravel",
-      issuer: "Udemy",
-      date: "Recent",
-      link: "https://github.com/Umashankar12345/Certificate"
+      title: "Problem Solving (Basic)",
+      issuer: "HackerRank",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/15GvEuoLMCSIthyW6meNwlRaCqSokLJKu/view?usp=sharing"
+    },
+    {
+      title: "Data Structures and Alogorithm",
+      issuer: "Online Course",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/1h6OsVuZ3V8BIvSBDtNe9syV-uh3pt8f_/view?usp=sharing"
+    },
+    {
+      title: "Object Oriented Programming",
+      issuer: "Online Course",
+      category: "Programming",
+      link: "https://drive.google.com/file/d/1dSkNc0UiRcuUF7Wx-n80XNxrg4CwaaYV/view?usp=sharing"
     },
     {
       title: "Professional Networking for Career Growth",
       issuer: "LinkedIn Learning",
-      date: "Recent",
-      link: "https://github.com/Umashankar12345/Certificate"
+      category: "Career Development",
+      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
+    },
+    {
+      title: "The Three Pillars of Effective Communication",
+      issuer: "Online Course",
+      category: "Soft Skills",
+      link: "https://drive.google.com/file/d/1Nn1oiklk9UO4N9DeWP0s0bGoEtdyzEMa/view?usp=sharing"
+    },
+    {
+      title: "Success Mindset",
+      issuer: "Online Course",
+      category: "Personal Development",
+      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
     }
+
+
   ],
 
   achievements: [
