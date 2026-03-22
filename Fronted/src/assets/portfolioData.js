@@ -64,7 +64,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
     platforms: [
       {
         name: "LeetCode",
-        solved: "300+",
+        solved: "400+",
         profile: "https://leetcode.com/u/Umashankar9572/",
         rating: "Active Participant"
       },
@@ -191,40 +191,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
       image: "/assets/projects/js-collection.png",
       category: "frontend"
     },
-    {
-      title: "Weather Insight Dashboard",
-      status: "COMPLETED",
-      duration: "May 2025 - Jul 2025",
-      description: "A real-time weather analytics dashboard with historical data visualization and location-based alerts.",
-      copy: {
-        problem: "Accessing detailed historical weather trends alongside live forecasts is often fragmented",
-        built: "React dashboard with Chart.js integration and custom API polling for precise updates",
-        coolFeature: "Dynamic background transitions based on live cloud coverage and local time"
-      },
-      techStack: "React, OpenWeather API, Chart.js",
-      technologies: ["ReactJS", "OpenWeather API", "Chart.js"],
-      github: "https://github.com/Umashankar12345/weather-dashboard",
-      demo: "https://weather-insight.vercel.app",
-      image: "/assets/projects/weather-dash.png",
-      category: "frontend"
-    },
-    {
-      title: "Elite E-Commerce Storefront",
-      status: "COMPLETED",
-      duration: "Mar 2025 - May 2025",
-      description: "A premium MERN stack shopping experience with advanced filtering, stripe integration, and admin dashboard.",
-      copy: {
-        problem: "Static e-commerce layouts often lack the responsiveness and depth required for high-end brands",
-        built: "Full-stack app with Redux state management and sleek glassmorphic UI components",
-        coolFeature: "Real-time inventory sync across multiple client sessions via Socket.io"
-      },
-      techStack: "MERN, Redux, Stripe, Socket.io",
-      technologies: ["NodeJS", "ReactJS", "MongoDB", "Redux"],
-      github: "https://github.com/Umashankar12345/elite-ecommerce",
-      demo: "https://elite-store.vercel.app",
-      image: "/assets/projects/ecommerce.png",
-      category: "full-stack"
-    }
+
 
   ],
 
