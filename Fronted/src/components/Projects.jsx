@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCode, FaTerminal } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaCode, FaTerminal } from 'react-icons/fa';
 import { portfolioData } from '../assets/portfolioData';
 
 const Projects = () => {
@@ -64,7 +64,7 @@ const Projects = () => {
                 <div className="relative aspect-video overflow-hidden">
                   <div className="absolute inset-0 bg-[#020d14]/40 group-hover:bg-transparent transition-all z-10" />
                   <img
-                    src={project.title.includes('Farmer') ? 'file:///C:/Users/hp/.gemini/antigravity/brain/86699546-5c55-468e-b479-a74202f5bcaa/ai_farmer_dashboard_1774200346495.png' : (project.title.includes('Try-On') ? 'file:///C:/Users/hp/.gemini/antigravity/brain/86699546-5c55-468e-b479-a74202f5bcaa/virtual_tryon_ui_1774200366375.png' : project.image)}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {

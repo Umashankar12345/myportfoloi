@@ -149,7 +149,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
       technologies: ["ReactJS", "OpenCV", "MediaPipe"],
       github: "https://github.com/Umashankar12345/virtual-tryon",
       demo: "https://virtual-try-on-tau-steel.vercel.app/index.html",
-      image: "/assets/projects/virtual-tryon.png",
+      image: "/assets/projects/virtual-try-on.png",
       category: "ai-ml"
     },
     {
