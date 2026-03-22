@@ -48,7 +48,7 @@ const Hero = () => {
 
   const stats = [
     { value: "7.0", label: "CGPA", sub: "out of 10 · LPU" },
-    { value: "3+", label: "PROJECTS", sub: "live on Vercel" },
+    { value: "6+", label: "PROJECTS", sub: "live on Vercel" },
     { value: "450+", label: "DSA SOLVED", sub: "on LeetCode" }
   ];
 

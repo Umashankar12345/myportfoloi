@@ -7,7 +7,7 @@ export const portfolioData = {
   location: "Punjab, India",
   linkedin: "https://www.linkedin.com/in/umashankar-kumar-l34d88269",
   github: "https://github.com/Umashankar12345",
-  instagram: "https://instagram.com/umashankar_kumar_",
+  instagram: "https://www.instagram.com/iamumashankar_ray/",
   resume: "/assets/projects/myResume.pdf",
 
   about: `I am a passionate Computer Science student at Lovely Professional University with a strong foundation in both theoretical concepts and practical applications. My journey in technology began with curiosity about how systems work, which evolved into a dedicated pursuit of software engineering.
@@ -148,7 +148,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
       ],
       technologies: ["ReactJS", "OpenCV", "MediaPipe"],
       github: "https://github.com/Umashankar12345/virtual-tryon",
-      demo: "https://virtual-tryon-demo.vercel.app",
+      demo: "https://virtual-try-on-tau-steel.vercel.app/index.html",
       image: "/assets/projects/virtual-tryon.png",
       category: "ai-ml"
     },
@@ -170,10 +170,62 @@ My approach combines strong technical skills with creative problem-solving, alwa
       ],
       technologies: ["ReactJS", "NodeJS", "Google Maps API", "JWT"],
       github: "https://github.com/Umashankar12345/road-trip-planner",
-      demo: "https://road-trip-planner.vercel.app",
+      demo: "https://smart-road-trip-plain-frontend-pjo28n8ai-umashankar-s-projects.vercel.app/",
       image: "/assets/projects/road-trip.png",
       category: "full-stack"
+    },
+    {
+      title: "Core JavaScript Fundamentals Collection",
+      status: "COMPLETED",
+      duration: "Sep 2025 - Jan 2026",
+      description: "A collection of advanced practice projects (banking system, calculators, election trackers) demonstrating deep mastery of vanilla JavaScript and DOM manipulation.",
+      copy: {
+        problem: "Modern frameworks often hide the complexity of low-level DOM management and state logic",
+        built: "A suite of 5+ tools using zero dependencies, focusing on efficient event handling and logic",
+        coolFeature: "End-to-end banking logic simulator with persistent DOM state management"
+      },
+      techStack: "Vanilla JS, HTML5, CSS3",
+      technologies: ["JavaScript", "HTML5", "CSS3"],
+      github: "https://github.com/Umashankar12345/Javascript/tree/main/ProjectPortfolio",
+      demo: "https://javascript-portfolio-ten.vercel.app/",
+      image: "/assets/projects/js-collection.png",
+      category: "frontend"
+    },
+    {
+      title: "Weather Insight Dashboard",
+      status: "COMPLETED",
+      duration: "May 2025 - Jul 2025",
+      description: "A real-time weather analytics dashboard with historical data visualization and location-based alerts.",
+      copy: {
+        problem: "Accessing detailed historical weather trends alongside live forecasts is often fragmented",
+        built: "React dashboard with Chart.js integration and custom API polling for precise updates",
+        coolFeature: "Dynamic background transitions based on live cloud coverage and local time"
+      },
+      techStack: "React, OpenWeather API, Chart.js",
+      technologies: ["ReactJS", "OpenWeather API", "Chart.js"],
+      github: "https://github.com/Umashankar12345/weather-dashboard",
+      demo: "https://weather-insight.vercel.app",
+      image: "/assets/projects/weather-dash.png",
+      category: "frontend"
+    },
+    {
+      title: "Elite E-Commerce Storefront",
+      status: "COMPLETED",
+      duration: "Mar 2025 - May 2025",
+      description: "A premium MERN stack shopping experience with advanced filtering, stripe integration, and admin dashboard.",
+      copy: {
+        problem: "Static e-commerce layouts often lack the responsiveness and depth required for high-end brands",
+        built: "Full-stack app with Redux state management and sleek glassmorphic UI components",
+        coolFeature: "Real-time inventory sync across multiple client sessions via Socket.io"
+      },
+      techStack: "MERN, Redux, Stripe, Socket.io",
+      technologies: ["NodeJS", "ReactJS", "MongoDB", "Redux"],
+      github: "https://github.com/Umashankar12345/elite-ecommerce",
+      demo: "https://elite-store.vercel.app",
+      image: "/assets/projects/ecommerce.png",
+      category: "full-stack"
     }
+
   ],
 
   githubStats: {
@@ -267,7 +319,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
     },
     {
       title: "Project Milestone",
-      description: "Built 5+ full-stack projects with real-world API integrations",
+      description: "Built 6+ full-stack projects with real-world API integrations",
       icon: "Project"
     },
     {
