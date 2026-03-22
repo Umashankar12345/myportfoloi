@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaCode, FaTerminal } from 'react-icons/fa';
 import { portfolioData } from '../assets/portfolioData';
 
 const Projects = () => {
@@ -14,31 +14,34 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="section-padding bg-white/50">
-      <div className="container mx-auto">
+    <section id="projects" className="py-24 bg-[#020d14] relative">
+      <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
-          <p className="text-gray-600">Turning complex problems into elegant software solutions</p>
+          <h2 className="text-xs font-mono tracking-[10px] text-[#ff6b00] uppercase mb-4">Portfolio</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase italic">
+            Featured <span className="text-[#ff6b00]">Constructions</span>
+          </h3>
         </motion.div>
 
-        {/* Filter Buttons */}
+        {/* Filter Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="glass-card rounded-full p-1 inline-flex flex-wrap justify-center">
+          <div className="flex bg-[#0a192f]/60 p-1 rounded-xl border border-white/5 backdrop-blur-md overflow-x-auto no-scrollbar max-w-full">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${activeFilter === filter
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-blue-600'
-                  }`}
+                className={`px-6 py-2 rounded-lg text-xs font-mono uppercase tracking-widest transition-all whitespace-nowrap ${
+                  activeFilter === filter
+                    ? 'bg-[#ff6b00] text-black font-black shadow-[0_0_15px_rgba(255,107,0,0.3)]'
+                    : 'text-[#4a7a90] hover:text-white'
+                }`}
               >
-                {filter.charAt(0).toUpperCase() + filter.slice(1).replace('-', ' ')}
+                {filter.replace('-', ' ')}
               </button>
             ))}
           </div>
@@ -51,85 +54,88 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="glass-card rounded-2xl overflow-hidden hover-lift flex flex-col h-full group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className="group relative bg-[#0a192f]/40 border border-white/5 rounded-2xl overflow-hidden hover:border-[#ff6b00]/30 transition-all flex flex-col h-full"
               >
-                {/* Project Image Placeholder with Overlay */}
-                <div className="relative aspect-video bg-gray-200 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex gap-4 mb-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/40 transition-all"
-                        title="GitHub Repository"
-                      >
-                        <FaGithub size={20} />
-                      </a>
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/40 transition-all"
-                        title="Live Demo"
-                      >
-                        <FaExternalLinkAlt size={20} />
-                      </a>
-                    </div>
-                  </div>
-                  {/* Actual image with fallback */}
+                {/* Image Section */}
+                <div className="relative aspect-video overflow-hidden">
+                  <div className="absolute inset-0 bg-[#020d14]/40 group-hover:bg-transparent transition-all z-10" />
                   <img
-                    src={project.image}
+                    src={project.title.includes('Farmer') ? 'file:///C:/Users/hp/.gemini/antigravity/brain/86699546-5c55-468e-b479-a74202f5bcaa/ai_farmer_dashboard_1774200346495.png' : (project.title.includes('Try-On') ? 'file:///C:/Users/hp/.gemini/antigravity/brain/86699546-5c55-468e-b479-a74202f5bcaa/virtual_tryon_ui_1774200366375.png' : project.image)}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                      e.target.src = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80';
                     }}
                   />
+                  <div className="absolute top-4 right-4 z-20 flex gap-2">
+                    {project.status && (
+                      <span className="px-3 py-1 bg-black/80 backdrop-blur-md rounded-full text-[9px] font-black uppercase tracking-widest text-[#00ff88] border border-[#00ff88]/30">
+                        {project.status}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
+                {/* Content Section */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                  <div className="flex items-center gap-2 mb-3">
+                    <FaTerminal className="text-[#ff6b00] text-xs" />
+                    <span className="text-[10px] font-mono text-[#4a7a90] uppercase tracking-widest">{project.category}</span>
+                  </div>
+                  
+                  <h4 className="text-xl font-black text-white uppercase tracking-tight mb-4 group-hover:text-[#ff6b00] transition-colors">
                     {project.title}
-                  </h3>
+                  </h4>
 
-                  <p className="text-sm text-blue-600 font-black mb-4 flex items-center tracking-tight">
-                    <FaCode size={12} className="mr-2" /> {project.techStack}
-                  </p>
-
-                  <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
+                  {project.copy ? (
+                    <div className="space-y-4 mb-6 flex-grow">
+                      <div>
+                        <p className="text-[9px] font-mono text-[#ff6b00] uppercase tracking-widest mb-1">Problem</p>
+                        <p className="text-[#c8e8f0]/90 text-xs leading-relaxed">{project.copy.problem}</p>
+                      </div>
+                      <div>
+                        <p className="text-[9px] font-mono text-[#00f5ff] uppercase tracking-widest mb-1">What I Built</p>
+                        <p className="text-[#c8e8f0]/90 text-xs leading-relaxed">{project.copy.built}</p>
+                      </div>
+                      <div className="p-2 bg-[#ff6b00]/5 border-l-2 border-[#ff6b00] rounded-r">
+                        <p className="text-[8px] font-mono text-[#ff6b00] uppercase tracking-widest mb-0.5">Cool Feature</p>
+                        <p className="text-[#c8e8f0] text-xs font-bold">{project.copy.coolFeature}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-[#4a7a90] text-sm mb-6 flex-grow leading-relaxed font-medium italic">
+                      {project.description}
+                    </p>
+                  )}
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.slice(0, 4).map(tech => (
-                      <span key={tech} className="px-2 py-1 bg-blue-50 text-blue-600 rounded text-[10px] font-black uppercase tracking-wider">
+                    {project.technologies.slice(0, 5).map(tech => (
+                      <span key={tech} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[9px] font-mono text-[#c8e8f0] uppercase tracking-wider">
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mt-auto">
+                  <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/5">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center py-2.5 bg-gray-900 text-white rounded-xl text-xs font-black uppercase tracking-widest hover:bg-black transition-all shadow-md active:scale-95"
+                      className="flex items-center justify-center py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest text-[#4a7a90] hover:bg-white/10 hover:text-white transition-all"
                     >
-                      <FaGithub className="mr-2" /> Code
+                      <FaCode className="mr-2" /> Source
                     </a>
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-xs font-black uppercase tracking-widest hover:shadow-lg hover:shadow-blue-200 transition-all active:scale-95"
+                      className="flex items-center justify-center py-3 bg-[#ff6b00]/10 border border-[#ff6b00]/50 rounded-xl text-[10px] font-black uppercase tracking-widest text-[#ff6b00] hover:bg-[#ff6b00] hover:text-black transition-all shadow-[0_0_15px_rgba(255,107,0,0.1)]"
                     >
-                      <FaExternalLinkAlt className="mr-2" /> Demo
+                      <FaExternalLinkAlt className="mr-2" /> Live
                     </a>
                   </div>
                 </div>

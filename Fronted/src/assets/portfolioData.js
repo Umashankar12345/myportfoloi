@@ -5,13 +5,14 @@ export const portfolioData = {
   email: "umashankarkumar9572@gmail.com",
   phone: "+91 9572345885",
   location: "Punjab, India",
-  linkedin: "https://linkedin.com/in/umashankarkumar",
+  linkedin: "https://www.linkedin.com/in/umashankar-kumar-l34d88269",
   github: "https://github.com/Umashankar12345",
+  instagram: "https://instagram.com/umashankar_kumar_",
   resume: "/assets/projects/myResume.pdf",
 
   about: `I am a passionate Computer Science student at Lovely Professional University with a strong foundation in both theoretical concepts and practical applications. My journey in technology began with curiosity about how systems work, which evolved into a dedicated pursuit of software engineering.
 
-Coming from Bihar and currently studying in Punjab, I've learned to adapt to diverse environments while maintaining a consistent focus on growth and learning. I believe in solving real-world problems through technology, particularly interested in AI/ML applications, full-stack development, and creating impactful digital solutions.
+Coming from Bihar and currently studying in Punjab, I've learned to adapt to diverse environments while maintaining a consistent focus on growth and learning. I believe in solving real-world problems through technology, particularly interested in projects like the AI-driven agricultural platform that empowers farmers through NLP and ML.
 
 My approach combines strong technical skills with creative problem-solving, always aiming to bridge complex algorithms with user-friendly interfaces.`,
 
@@ -21,7 +22,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
       degree: "Bachelor of Technology - Computer Science and Engineering",
       duration: "Aug 2023 - Present",
       location: "Punjab, India",
-      details: "CGPA: 7.0",
+      details: "CGPA: 7.0 / 10",
       highlights: [
         "Active participant in coding competitions",
         "Coursework in Data Structures, Algorithms, DBMS, OS, CN ,"
@@ -41,12 +42,12 @@ My approach combines strong technical skills with creative problem-solving, alwa
   ],
 
   technicalSkills: {
-    languages: ["C", "C++", "JavaScript", "TypeScript", "Java", "Kotlin"],
-    frameworks: ["ReactJS", "NodeJS", "HTML5", "CSS3", "Tailwind CSS", "Flask", "Django"],
-    databases: ["MySQL", "MongoDB"],
-    tools: ["Git", "GitHub", "Google Maps API", "ML APIs"],
-    fundamentals: ["DBMS", "Operating Systems", "Computer Networks", "SQL", "OOPs", "DSA"],
-    skills: ["Teamwork", "Communication", "Problem-Solving", "Adaptability", "Time Management", "Leadership"],
+    frontend: ["ReactJS", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript"],
+    backend: ["NodeJS", "Express", "REST API", "Flask", "Django"],
+    databases: ["MySQL", "MongoDB", "SQL"],
+    devops: ["Git", "GitHub", "Vercel"],
+    tools: ["Google Maps API", "ML APIs", "Postman", "VS Code"],
+    fundamentals: ["DBMS", "Operating Systems", "Computer Networks", "OOPs", "DSA"],
   },
 
   softSkills: [
@@ -109,15 +110,21 @@ My approach combines strong technical skills with creative problem-solving, alwa
   projects: [
     {
       title: "AI-Based Farmer Query Support and Advisory System",
-      duration: "Nov 2025 - Ongoing",
-      description: "An AI-driven platform that answers farmer queries using NLP, ML models and real-time agricultural data. Integrated weather APIs to deliver real-time alerts.",
-      techStack: "React, Node.js, NLP, ML, Google Maps API",
+      duration: "Nov 2025 – Ongoing",
+      status: "In progress — Nov 2025 onwards",
+      description: "An AI-driven agricultural platform that answers farmer queries using NLP and ML models. Integrates live weather APIs for real-time crop protection alerts and delivers personalised recommendations for crop selection, fertilizer use and soil analysis.",
+      copy: {
+        problem: "Farmers lack instant access to expert crop and soil advice",
+        built: "NLP-powered query engine + ML crop/fertilizer/soil recommendation modules",
+        coolFeature: "Real-time weather alerts that trigger personalised crop protection advice"
+      },
+      techStack: "Python, NLP, Machine Learning, Weather API, Predictive Models",
       features: [
         "Crop recommendation using predictive algorithms",
         "Fertilizer advisory based on soil analysis",
         "Real-time weather alerts via external APIs"
       ],
-      technologies: ["ReactJS", "NodeJS", "Machine Learning", "NLP"],
+      technologies: ["Python", "NLP", "Machine Learning", "Weather API"],
       github: "https://github.com/Umashankar12345/farmer-query-system",
       demo: "https://farmesupport.vercel.app/dashboard",
       image: "/assets/projects/farmer-query.png",
@@ -125,15 +132,21 @@ My approach combines strong technical skills with creative problem-solving, alwa
     },
     {
       title: "Virtual Try-On Tool For Clothing & Accessories",
-      duration: "Jan 2024 - Mar 2025",
-      description: "Real-time webcam-based preview for clothing and accessories, enhancing online shopping experience with interactive visualization.",
-      techStack: "Flask, Django, ML APIs, HTML5/CSS3",
+      status: "COMPLETED",
+      duration: "Jan 2024 – Mar 2025",
+      description: "A real-time virtual try-on tool that lets users preview clothing and accessories via live webcam. Uses face and body tracking to overlay items accurately, with a drag-and-drop system for adjusting size, rotation and position.",
+      copy: {
+        problem: "Online shoppers can't visualise how accessories look on them before buying",
+        built: "Webcam-based try-on with real-time face/body tracking and draggable overlays",
+        coolFeature: "Drag-and-drop resize, rotate and reposition any accessory in real time"
+      },
+      techStack: "React, OpenCV, MediaPipe, Face Tracking, Drag & Drop",
       features: [
         "Webcam support with face and body tracking",
         "Dynamic drag-and-drop UI for accessories",
         "Low-latency real-time rendering"
       ],
-      technologies: ["Flask", "Django", "ML APIs", "JavaScript"],
+      technologies: ["ReactJS", "OpenCV", "MediaPipe"],
       github: "https://github.com/Umashankar12345/virtual-tryon",
       demo: "https://virtual-tryon-demo.vercel.app",
       image: "/assets/projects/virtual-tryon.png",
@@ -141,15 +154,21 @@ My approach combines strong technical skills with creative problem-solving, alwa
     },
     {
       title: "Smart Road Trip Planner (SRTP)",
+      status: "COMPLETED",
       duration: "Aug 2024 - Jan 2025",
-      description: "Route optimization and personalized recommendations for restaurants and hotels using Google Places API.",
-      techStack: "React, Node.js, Google Maps API, JWT",
+      description: "A full-stack trip planning app with route optimisation and real-time map integration. Features JWT authentication, personalised trip saving, and smart recommendations for restaurants, hotels and nearby attractions via Google Places API.",
+      copy: {
+        problem: "Planning a road trip across multiple stops with attraction discovery is scattered across apps",
+        built: "One app — optimised routes + hotel/restaurant/attraction recommendations + saved trips",
+        coolFeature: "JWT-secured profile saves past trips and preferences for personalised suggestions"
+      },
+      techStack: "MERN, Google Maps API, Google Places API, JWT",
       features: [
         "Secure user authentication with JWT",
         "Route optimization algorithms",
         "Geo-location based recommendations"
       ],
-      technologies: ["ReactJS", "NodeJS", "Google Maps API"],
+      technologies: ["ReactJS", "NodeJS", "Google Maps API", "JWT"],
       github: "https://github.com/Umashankar12345/road-trip-planner",
       demo: "https://road-trip-planner.vercel.app",
       image: "/assets/projects/road-trip.png",
@@ -189,46 +208,25 @@ My approach combines strong technical skills with creative problem-solving, alwa
 
   certificates: [
 
+
     {
       title: "Cloud Computing",
       issuer: "NPTEL, IIT Kharagpur",
       date: "Nov 2025",
       link: "https://drive.google.com/file/d/12rlU8P7x0jC6fHtv8CJ31-VxNBa90Bnr/view?usp=sharing"
     },
-    {
 
-      title: "ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM",
-      issuer: "NPTEL, IIT Kharagpur",
-      date: "Nov 2025",
-      link: "https://drive.google.com/file/d/1dUEdWBdYyvkuofDo78IyIVYM-kDneRyE/view?usp=sharing"
-    },
     {
       title: "Computational Theory: Language Principle & Finite Automata Theory",
       issuer: "NPTEL, IIT Kharagpur",
       date: "Aug 2025",
       link: "https://drive.google.com/file/d/1ruI2dLV77DM_tgj6knG3qAvEqyRRFgh4/view?usp=sharing"
     },
-    {
-      title: "Build Generative AI Apps and Solutions with No-Code Tools",
-      issuer: "NPTEL, IIT Kharagpur",
-      date: "Aug 2025",
-      link: "https://drive.google.com/file/d/1kG0Uo7XbgIGonwN-_ONiaMWaceK2FjQs/view?usp=sharing"
-    },
-    {
-      title: "Laravel Master Certificate",
-      issuer: "Udemy",
-      category: "Web Development",
-      link: "https://drive.google.com/file/d/149GMjvioDLoZ9XAusCG_HLmtrVz-0DCA/view?usp=sharing"
-    },
-    {
-      title: "Generative AI: Introduction to Large Language Models",
-      issuer: "Online Course",
-      category: "Artificial Intelligence",
-      link: "https://drive.google.com/file/d/1BK1g6XfGq9jS1fjZWh6BZ7yVz9gK48LT/preview"
-    },
+
+
     {
       title: "Introduction to Generative AI with GPT",
-      issuer: "Online Course",
+      issuer: "Linkdin Learning",
       category: "Artificial Intelligence",
       link: "https://drive.google.com/file/d/1pXmQbIRbQoe8I1S8WtSlIiZ4CCzUYySz/preview"
     },
@@ -238,19 +236,7 @@ My approach combines strong technical skills with creative problem-solving, alwa
       category: "Networking",
       link: "https://drive.google.com/file/d/13-_RIAlHh6Lb9YkTGAd6sbQXOL5odrH-/view?usp=sharing"
     },
-    {
-      title: "Packet switching Networks and Algorithm",
-      issuer: "Online Course",
-      category: "Networking",
-      link: "https://drive.google.com/file/d/1Qh2px2jwEC6TPvrdzluSoxPpRYqkSCYQ/view?usp=sharing"
-    },
 
-    {
-      title: "Use Cases , the Future of 5G Course , Beyond",
-      issuer: "Online Course",
-      category: "Telecommunications",
-      link: "https://drive.google.com/file/d/1peKbdjusxKPZlndFlEHn3WGWuaAca10_/view?usp=sharing"
-    },
     {
       title: "Introduction to Android Mobile Application Development",
       issuer: "Meta / Coursera",
@@ -268,40 +254,41 @@ My approach combines strong technical skills with creative problem-solving, alwa
       issuer: "Online Course",
       category: "Programming",
       link: "https://drive.google.com/file/d/1h6OsVuZ3V8BIvSBDtNe9syV-uh3pt8f_/view?usp=sharing"
-    },
-    {
-      title: "Object Oriented Programming",
-      issuer: "Online Course",
-      category: "Programming",
-      link: "https://drive.google.com/file/d/1dSkNc0UiRcuUF7Wx-n80XNxrg4CwaaYV/view?usp=sharing"
-    },
-    {
-      title: "Professional Networking for Career Growth",
-      issuer: "LinkedIn Learning",
-      category: "Career Development",
-      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
-    },
-    {
-      title: "The Three Pillars of Effective Communication",
-      issuer: "Online Course",
-      category: "Soft Skills",
-      link: "https://drive.google.com/file/d/1Nn1oiklk9UO4N9DeWP0s0bGoEtdyzEMa/view?usp=sharing"
-    },
-    {
-      title: "Success Mindset",
-      issuer: "Online Course",
-      category: "Personal Development",
-      link: "https://drive.google.com/file/d/1FH9VyzmKowfbqXTVZIDS0E9QHZkXO03l/preview"
     }
 
 
   ],
 
   achievements: [
-    "Solved 450+ coding problems on LeetCode & GFG",
-    "Built 5+ full-stack projects with real-world API integrations",
-    "100 Days coding streak on LeetCode (2025)",
-    "Earned multiple Silver/Gold badges on HackerRank for Problem Solving"
+    {
+      title: "LeetCode Solved",
+      description: "Solved 450+ coding problems on LeetCode & GFG",
+      icon: "LeetCode"
+    },
+    {
+      title: "Project Milestone",
+      description: "Built 5+ full-stack projects with real-world API integrations",
+      icon: "Project"
+    },
+    {
+      title: "100 Days Streak",
+      description: "100 Days coding streak on LeetCode (2025)",
+      icon: "Streak"
+    },
+    {
+      title: "HackerRank Badges",
+      description: "Earned multiple Silver/Gold badges on HackerRank for Problem Solving",
+      icon: "Badge"
+    }
+  ],
+
+  training: [
+    {
+      title: "Data Structures and Algorithms with Java & C++",
+      organization: "LPU Training",
+      duration: "Jun 2025 - Jul 2025",
+      description: "Intensive training program focusing on advanced DSA concepts using Java and C++."
+    }
   ],
 
   goals: {
