@@ -38,6 +38,17 @@ My approach combines strong technical skills with creative problem-solving, alwa
         "Developed strong foundation in engineering principles",
         "Participated in technical workshops and projects"
       ]
+    },
+    {
+      institution: "Jean Paul High School",
+      degree: "Matriculation",
+      duration: "2019 - 2020",
+      location: "Bihar, India",
+      details: "Percentage: 70%",
+      highlights: [
+        "Developed strong foundation in engineering principles",
+        "Participated in technical workshops and projects"
+      ]
     }
   ],
 
@@ -118,15 +129,15 @@ My approach combines strong technical skills with creative problem-solving, alwa
         built: "NLP-powered query engine + ML crop/fertilizer/soil recommendation modules",
         coolFeature: "Real-time weather alerts that trigger personalised crop protection advice"
       },
-      techStack: "Python, NLP, Machine Learning, Weather API, Predictive Models",
+      techStack: "ReactJS, NodeJS, Express, MongoDB, Weather API, Predictive Models",
       features: [
         "Crop recommendation using predictive algorithms",
         "Fertilizer advisory based on soil analysis",
         "Real-time weather alerts via external APIs"
       ],
-      technologies: ["Python", "NLP", "Machine Learning", "Weather API"],
-      github: "https://github.com/Umashankar12345/farmer-query-system",
-      demo: "https://farmesupport.vercel.app/dashboard",
+      technologies: ["ReactJS", "NodeJS", "Express", "MongoDB", "Weather API"],
+      github: "https://github.com/Umashankar12345/Farmer-Support",
+      demo: "https://vercel.com/umashankar-s-projects/farmer-support",
       image: "/assets/projects/farmer-query.png",
       category: "full-stack"
     },
